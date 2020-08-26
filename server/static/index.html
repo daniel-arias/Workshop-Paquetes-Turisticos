@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
-    <link rel="stylesheet" href="../Clase46/styles.css" type="text/css">
+    <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 <body id="body">
     <div class="login-page">
@@ -17,13 +17,15 @@
             <button>create</button>
             <p class="message">Ya está registrado? <a href="#">Ingrese</a></p>
           </form>
-          <form class="login-form">
-            <input type="text" placeholder="correo electronico"/>
-            <input type="password" placeholder="contraseña"/>
-            <button>login</button>
+          <form class="login-form" id="login" autocomplete="off">
+            <input type="text" placeholder="correo electronico" id="username"/>
+            <input type="password" placeholder="contraseña" id="password"/>
+            <button type="submit">login</button>
             <p class="message">No está registrado? <a href="#">Regístrese</a></p>
           </form>
         </div>
       </div>
+
+    <script src="./main.js"></script>
 </body>
 </html>

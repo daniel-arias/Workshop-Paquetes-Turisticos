@@ -91,4 +91,20 @@ body {
   .container .info span .fa {
     color: #EF3B3A;
   }
-  
+
+  .welcome {
+    text-align: center;
+  }
+  #productos {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+  }
+  #productos > div {
+    flex-basis: 25%;
+  }
+  #productos img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }

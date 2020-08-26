@@ -2,27 +2,40 @@
 /**
  * Middlewares
  */
-const md = require('./../middleware');
+// const md = require('./../middleware');
 
-
-/**
- * Service
- */
-const { Service } = require('./Service');
 
 /**
  * CONSTANTS
  */
-const { URLS, autores } = require('./../utils/constants');
-
-const setRoutes = (app) => {
-  // Author
-  const service = new Service();
-  service.setModel(autores);
-  app.get(`${URLS.API_BASE}${URLS.AUTHORS}/:id?`, md.auth.authUser, service.get);
-};
+const { usuarios, productos } = require('./../utils/constants');
 
 
-module.exports = {
-  setRoutes
+const routes = (app) => {
+  app.post('/api/usuarios', (req, res) => {
+    const {username, password} = req.body;
+
+    const user = usuarios.find(el =>
+      el.email.toString() === username.toString() && el.contrasena.toString() === password.toString()
+    );
+
+    if (user) {
+      return res.json(user);
+    } else {
+      return res.json({});
+    }
+
+  })
+
+  app.get('/api/usuarios', (req, res) => {
+    res.json(usuarios)
+  });
+
+  app.get('/api/productos', (req, res) => {
+
+    res.json(productos)
+  });
 }
+
+
+module.exports = routes;
