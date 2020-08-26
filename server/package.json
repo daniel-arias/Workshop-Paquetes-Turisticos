@@ -1,5 +1,5 @@
 {
-  "name": "express-demo",
+  "name": "paquetes_turisticos",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -8,7 +8,7 @@
     "nodemon": "nodemon",
     "start": "npm run nodemon app.js"
   },
-  "author": "Cris",
+  "author": "Caro Sabin Daniel Nico",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",

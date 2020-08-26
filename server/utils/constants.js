@@ -4,34 +4,80 @@ const URLS = {
   BOOKS: '/libros'
 };
 
-const autores = [
+const usuarios = [
   {
-    id: 1,
-    nombre: "Victor",
-    apellido: "Frankl",
-    fechaNacimiento: " 26/03/1905",
-    libros: [
-      {
-        id: 1,
-        titulo: "Un hombre en busca del sentido",
-        descripcion: "vida en el holocaustro",
-        anioPublicacion: 1946
+    nombre: "usuario1",
+    contrasena: "contra1",
+    email: "usuario1emailcom",
+    edad: 1,
+    sexo: "M",
+    celular: "3101231231",
+    productos:
+      [
+        {
+          productoId: "producto1"
+        }
+      ]
+  },
+  {
+    nombre: "usuario2",
+    contrasena: "contra2",
+    email: "usuario2emailcom",
+    edad: 2,
+    sexo: "F",
+    celular: "3101231231",
+    productos:
+      [
+        {
+          productoId: "producto1"
+        },
+        {
+          productoId: "producto2"
+        }
+      ]
+  }, {
+    nombre: "usuario3",
+    contrasena: "contra3",
+    email: "usuario3emailcom",
+    edad: 3,
+    sexo: "M",
+    celular: "3101231231",
+    productos:
+      [
+        {
+          productoId: "producto3"
+        }
+      ]
+  }
+];
 
-      },
-      {
-        id: 2,
-        titulo: "Fundamentos y aplicaciones de la logoterapia",
-        descripcion: "logoterapi y vida personal",
-        anioPublicacion: 1969
-      },
-      {
-        id: 3,
-        titulo: "a pesar de todo, decir si a la vida",
-        descripcion: "superacion emocional",
-        anioPublicacion: 1946
-      },
-
-    ]
+constproductos = [
+  {
+    productoId: "producto1",
+    nombre: "producto1",
+    descripcion: "descripcion1",
+    precio: 111,
+    categoria: "categoria1",
+    talla: "",
+    color: ""
+  },
+  {
+    productoId: "producto2",
+    nombre: "producto2",
+    descripcion: "descripcion2",
+    precio: 222,
+    categoria: "categoria2",
+    talla: "M",
+    color: "azul"
+  },
+  {
+    productoId: "producto3",
+    nombre: "producto3",
+    descripcion: "descripcion3",
+    precio: 333,
+    categoria: "categoria1",
+    talla: "L",
+    color: "rojo"
   }
 ];
 
