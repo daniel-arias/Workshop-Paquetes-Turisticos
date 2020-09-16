@@ -8,7 +8,8 @@
 /**
  * CONSTANTS
  */
-const { usuarios, productos } = require('./../utils/constants');
+// const { usuarios, productos } = require('./../utils/constants');
+const {db} = require('./../DB/dbHandler');
 
 
 const routes = (app) => {
@@ -28,7 +29,13 @@ const routes = (app) => {
   })
 
   app.get('/api/usuarios', (req, res) => {
-    res.json(usuarios)
+    db.query('SELECT * FROM acamica.clientes', {type: db.QueryTypes.SELECT})
+    .then(resDB => {
+        console.log(resDB);
+        res.json(resDB);
+    }).catch(err => {
+        console.error(err);
+    });
   });
 
   app.get('/api/productos', (req, res) => {
