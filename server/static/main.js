@@ -1,9 +1,12 @@
 // const { authUser } = require("../middleware/auth");
 
 // const { json } = require("body-parser");
-
+const register = document.querySelector('.register');
 const login = document.getElementById('login');
 
+register.addEventListener('click', () => {
+  location.assign('Registro.html');
+})
 if (login) {
   login.addEventListener('submit', validateLogin);
 }
