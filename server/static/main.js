@@ -67,7 +67,7 @@ function listProducts(result) {
     const item = document.createElement('div');
     item.innerHTML= ` <img src="${product.imagen}">
                       <h2>${product.nombre}</h2>
-                      <h3>${product.precio}</h3> 
+                      <h3>$${product.precio}</h3> 
                       <button>comprar</button>`;
     productos.append(item);
   });

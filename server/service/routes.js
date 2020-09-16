@@ -15,16 +15,20 @@ const {db} = require('./../DB/dbHandler');
 const routes = (app) => {
   app.post('/api/usuarios', (req, res) => {
     const {username, password} = req.body;
-
-    const user = usuarios.find(el =>
-      el.email.toString() === username.toString() && el.contrasena.toString() === password.toString()
-    );
-
-    if (user) {
-      return res.json(user);
-    } else {
-      return res.json({});
-    }
+    db.query('SELECT * FROM acamica.clientes', {type: db.QueryTypes.SELECT})
+    .then(resDB => {
+      const user = resDB.find(el =>
+        el.email.toString() === username.toString() && el.password.toString() === password.toString()
+      );
+  
+      if (user) {
+        return res.json(user);
+      } else {
+        return res.json({});
+      }
+    }).catch(err => {
+        console.error(err);
+    });
 
   })
 
@@ -39,8 +43,13 @@ const routes = (app) => {
   });
 
   app.get('/api/productos', (req, res) => {
-
-    res.json(productos)
+    db.query('SELECT * FROM acamica.productos', {type: db.QueryTypes.SELECT})
+    .then(resDB => {
+        console.log(resDB);
+        res.json(resDB);
+    }).catch(err => {
+        console.error(err);
+    });
   });
 }
 
