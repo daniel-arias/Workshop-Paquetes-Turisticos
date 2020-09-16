@@ -4,9 +4,9 @@
 const register = document.querySelector('.register');
 const login = document.getElementById('login');
 
-register.addEventListener('click', () => {
-  location.assign('Registro.html');
-})
+// register.addEventListener('click', () => {
+//   location.assign('Registro.html');
+// })
 if (login) {
   login.addEventListener('submit', validateLogin);
 }
